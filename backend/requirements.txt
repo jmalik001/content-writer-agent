@@ -1,0 +1,32 @@
+# fastapi
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+
+# pydantic v2
+pydantic==2.7.4
+pydantic-settings==2.3.3
+
+# langchain & langgraph — versions pinned to address security advisories:
+# - langchain-core <1.2.22: Path Traversal in legacy load_prompt (CVE fixed in 1.2.22)
+# - langchain-core <0.3.81: serialization injection / secret extraction
+# - langchain-core <0.3.80: template injection via attribute access
+# - langchain-community <0.3.27: XXE attacks
+langchain==1.2.15
+langchain-core==1.3.0
+langchain-community==0.3.31
+langgraph==1.1.8
+
+# llm providers
+langchain-openai==1.1.14
+langchain-groq==1.1.2
+
+# web search
+duckduckgo-search==6.2.13
+tavily-python==0.3.9
+
+# utilities
+python-dotenv==1.0.1
+httpx==0.27.0
+
+# langsmith tracing (optional)
+langsmith==0.7.32
