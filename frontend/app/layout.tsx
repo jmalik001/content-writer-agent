@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -31,16 +32,16 @@ export default function RootLayout({
       >
         <nav className="border-b border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900">
           <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-            <a href="/" className="flex items-center gap-2 font-bold text-blue-600 text-lg">
+            <Link href="/" className="flex items-center gap-2 font-bold text-blue-600 text-lg">
               <span>💼</span>
               <span>LinkedIn Content Agent</span>
-            </a>
-            <a
+            </Link>
+            <Link
               href="/generate"
               className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
             >
               New Post
-            </a>
+            </Link>
           </div>
         </nav>
         <main className="mx-auto max-w-6xl px-4 py-8">{children}</main>

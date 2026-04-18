@@ -79,8 +79,9 @@ function GeneratePageInner() {
         },
         () => {
           // WebSocket closed without completion — mark as failed if still running
-          useGenerationStore.getState().status === "running" &&
+          if (useGenerationStore.getState().status === "running") {
             setError("Connection closed unexpectedly");
+          }
         }
       );
 
