@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import asyncio
 import json
 import logging
 from typing import Any
@@ -19,7 +18,7 @@ from models.schemas import (
     StatusResponse,
     TrendingTopicsResponse,
 )
-from tools.post_formatter import extract_hashtags, format_post
+from tools.post_formatter import format_post
 from tools.web_search import web_search
 from workflows.graph import get_graph
 
