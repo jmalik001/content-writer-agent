@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import asyncio
 import json
 import logging
 from typing import Any
@@ -19,7 +18,7 @@ from models.schemas import (
     StatusResponse,
     TrendingTopicsResponse,
 )
-from tools.post_formatter import extract_hashtags, format_post
+from tools.post_formatter import format_post
 from tools.web_search import web_search
 from workflows.graph import get_graph
 
@@ -155,7 +154,6 @@ async def get_trending_topics() -> TrendingTopicsResponse:
     from langchain_core.messages import HumanMessage, SystemMessage
     from pathlib import Path
     from models.schemas import TrendingTopic
-    import json
 
     results = web_search("trending LinkedIn professional topics technology AI 2025", max_results=10)
     context = "\n".join(
