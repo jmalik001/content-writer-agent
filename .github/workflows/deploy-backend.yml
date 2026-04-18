@@ -9,6 +9,10 @@ on:
       - "railway.json"
       - ".github/workflows/deploy-backend.yml"
 
+concurrency:
+  group: deploy-backend-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   deploy:
     name: Deploy to Railway
