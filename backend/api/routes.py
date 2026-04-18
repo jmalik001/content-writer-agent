@@ -155,7 +155,6 @@ async def get_trending_topics() -> TrendingTopicsResponse:
     from langchain_core.messages import HumanMessage, SystemMessage
     from pathlib import Path
     from models.schemas import TrendingTopic
-    import json
 
     results = web_search("trending LinkedIn professional topics technology AI 2025", max_results=10)
     context = "\n".join(
