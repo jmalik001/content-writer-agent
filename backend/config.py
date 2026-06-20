@@ -2,15 +2,19 @@
 
 from __future__ import annotations
 
+from pathlib import Path
 from typing import Literal
 
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
+BASE_DIR = Path(__file__).resolve().parent
+
+
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
-        env_file=".env",
+        env_file=BASE_DIR / ".env",
         env_file_encoding="utf-8",
         case_sensitive=False,
         extra="ignore",
@@ -40,7 +44,7 @@ class Settings(BaseSettings):
         if self.llm_model:
             return self.llm_model
         defaults = {
-            "groq": "llama3-8b-8192",
+            "groq": "llama-3.3-70b-versatile",
             "openai": "gpt-4o-mini",
         }
         return defaults[self.llm_provider]
